@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    flex-direction: row; /* 変更: column から row へ */
+    align-items: center;
+    justify-content: center; /* 追加 */
+    font-family: 'Press Start 2P', cursive;
+    gap: 20px; /* 追加 */
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+}
+
+h1 { /* 追加: H1タグのスタイルを追加 */
+    color: #00FF00;
+    position: absolute; /* H1タグを絶対配置にする */
+    top: 20px; /* 上からの位置 */
+    left: 20%; /* 左からの位置 */
+    transform: translateX(-50%); /* 中央揃え */
+}
+
+canvas {
+    border: 2px solid #00FF00;
+    background-color: #000;
+}
+
+#game-info {
+    color: #00FF00;
+    margin-top: 20px;
+    text-align: center;
+    display: flex; /* 追加 */
+    flex-direction: column; /* 追加: ボタンを縦に並べる */
+    gap: 10px; /* 追加: ボタン間のスペース */
+}
+
+button {
+    background: #000000;
+    color: #00FF00;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+
+
+
