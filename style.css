@@ -1,20 +1,57 @@
 body {
     display: flex;
-    flex-direction: row; /* 変更: column から row へ */
-    align-items: center;
-    justify-content: center; /* 追加 */
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
     font-family: 'Press Start 2P', cursive;
-    gap: 20px; /* 追加 */
-    font-family: Arial, sans-serif;
+    gap: 30px; /* カラム間のスペース */
     background-color: #000000;
+    color: #00FF00;
+    padding-top: 20px;
+    min-height: 100vh; /* 画面全体の高さを確保 */
 }
 
-h1 { /* 追加: H1タグのスタイルを追加 */
+.game-column { /* 新規追加 */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#left-column { /* 新規追加 */
+    width: 180px; /* 左カラムの幅を固定 */
+}
+
+#right-column { /* 新規追加 */
+    width: 180px; /* 右カラムの幅を固定 */
+    padding-top: 60px; /* ボタンの位置を調整 */
+}
+
+h1 {
     color: #00FF00;
-    position: absolute; /* H1タグを絶対配置にする */
-    top: 20px; /* 上からの位置 */
-    left: 20%; /* 左からの位置 */
-    transform: translateX(-50%); /* 中央揃え */
+    text-align: left; /* 左揃えに変更 */
+    margin-bottom: 20px;
+    font-size: 32px; /* 少し大きく調整 */
+}
+
+#game-container {
+    position: relative;
+}
+
+#game-over-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: red;
+    font-size: 40px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 100;
+}
+
+.hidden {
+    display: none;
 }
 
 canvas {
@@ -23,23 +60,37 @@ canvas {
 }
 
 #game-info {
-    color: #00FF00;
-    margin-top: 20px;
-    text-align: center;
-    display: flex; /* 追加 */
-    flex-direction: column; /* 追加: ボタンを縦に並べる */
-    gap: 10px; /* 追加: ボタン間のスペース */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#game-info p {
+    margin: 0;
+}
+
+.next-mino-container {
+    margin-top: 10px;
+}
+
+#nextMinoCanvas {
+    border: 2px solid #00FF00;
+    background-color: #000;
 }
 
 button {
+    font-family: 'Press Start 2P', cursive;
     background: #000000;
     color: #00FF00;
-    padding: 10px 20px;
+    padding: 15px 20px; /* 少し大きく調整 */
     font-size: 16px;
     cursor: pointer;
+    border: 2px solid #00FF00;
+    text-align: center;
 }
 
-
-
-
-
+button:hover {
+    background: #00FF00;
+    color: #000000;
+}
