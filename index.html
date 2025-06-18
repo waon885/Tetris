@@ -3,20 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>テトリス</title>
+    <title>Tetris</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    </head>
+</head>
 <body>
-    <h1>テトリス</h1>
-    <canvas id="tetrisCanvas" width="300" height="600"></canvas>
-    <div id="game-info">
-        <p>スコア: <span id="score">0</span></p>
-        <p>レベル: <span id="level">1</span></p>
-        <button id="startButton">ゲーム開始</button>
-        <button id="pauseButton">一時停止 / 再開</button>
-        <button id="endGameButton">ゲーム終了</button>
+
+    <div class="game-column" id="left-column">
+        <h1>Tetris</h1>
+        <div id="game-info">
+            <p>STATUS: <span id="status">Ready</span></p>
+            <p>SCORE: <span id="score">0</span></p>
+            <p>LINES: <span id="lines">0</span></p>
+            <p>LEVEL: <span id="level">1</span></p>
+            <div class="next-mino-container">
+                <p>NEXT</p>
+                <canvas id="nextMinoCanvas" width="120" height="120"></canvas>
+            </div>
+        </div>
     </div>
+
+    <div class="game-column" id="center-column">
+        <div id="game-container">
+            <div id="game-over-message" class="hidden">GAME OVER</div>
+            <canvas id="tetrisCanvas" width="300" height="600"></canvas>
+        </div>
+    </div>
+
+    <div class="game-column" id="right-column">
+        <button id="startButton">START</button>
+        <button id="pauseButton">PAUSE</button>
+        <button id="endGameButton">END</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
